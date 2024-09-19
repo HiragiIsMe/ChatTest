@@ -17,5 +17,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::post('/conversation', [ChatsController::class, 'MakeChat']);
 
     Route::post('/message', [ChatsController::class, 'MakeMessage']);
+
+    Route::get('/allmessage/{id}', [ChatsController::class, 'GetAllMessage']);
     
 });
