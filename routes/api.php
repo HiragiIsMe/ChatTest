@@ -14,10 +14,14 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    Route::get('/conversations', [ChatsController::class, 'AllChat']);
+
     Route::post('/conversation', [ChatsController::class, 'MakeChat']);
 
     Route::post('/message', [ChatsController::class, 'MakeMessage']);
 
-    Route::get('/allmessage/{id}', [ChatsController::class, 'GetAllMessage']);
+    Route::get('/message/{id}', [ChatsController::class, 'GetAllMessage']);
+
+    Route::get('/getusers', [ChatsController::class, 'GetAllUsers']);
     
 });
